@@ -13,7 +13,7 @@ section .text
 
 ;onde cmc o progrma (obrigatorio)
 global _start 
-
+;entrada
 _start:
     mov EAX, 0x4 ; "to querendo uma saida"
     mov EBX, 0x1 ; ' quero a saida na porta padrao'
@@ -21,8 +21,7 @@ _start:
     mov EDX, tam ; 'esse é o tamanho'
     int 0x80 ;agota faz
 
-    ;destino, origem EAX = 1
-            ;hexadecima 0x(numero)
+;saida
     mov EAX, 0x1 
     mov EBX, 0x0
     int 0x80
