@@ -36,12 +36,12 @@ _cmc:
     mov EAX, DWORD[x]
     mov EBX, DWORD[y]
 
-    ; je =
-    ; jg >
-    ; jge >=
-    ; jl <
-    ; jle <=
-    ; jne !=
+                            ; je =
+                            ; jg >
+                            ; jge >=
+                            ; jl <
+                            ; jle <=
+                            ; jne !=
 
     ;if
     cmp EAX, EBX
@@ -61,10 +61,5 @@ final:
     int SYS_CALL
 
     mov EAX, SYS_EXIT
-    xor EBX, EBX ;xor == 0, msm coisa que mov EBX, RET_EXIT
+    xor EBX, EBX            ; xor == 0, msm coisa que mov EBX, RET_EXIT
     int SYS_CALL
-
-
-    
-
-    
