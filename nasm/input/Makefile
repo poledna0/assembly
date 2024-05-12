@@ -1,4 +1,4 @@
-NOME = entrada
+NOME = input
 
 all: $(NOME).o
 	ld -s -o $(NOME) $(NOME).o
