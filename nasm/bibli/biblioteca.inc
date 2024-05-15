@@ -21,9 +21,9 @@ segment .bss
 segment .text
 
 saidaResultado:
-    mov EAX, SYS_WRITE
-    mov EBX, STD_OUT
+    mov EAX, 0x4
+    mov EBX, 0x1                   ; saida padrao, vai sair no console
     mov ECX, BUFFER
     mov EDX, TAM_BUFFER
-    int SYS_CALL
+    int 0x80
     ret
