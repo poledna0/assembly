@@ -15,8 +15,8 @@ segment .data
     INP_DF      equ 0x0     ; Entrada padrão
 
 section .data
-    x dd 28
-    y dd 40
+    x dd 28                 ; define dobleword
+    y dd 40                 
                             ; DB = Define Byte           -> aloca 1 byte
                             ; DW = Define Word           -> aloca 2 bytes
                             ; DD = Define Doubleword     -> aloca 4 bytes
@@ -42,7 +42,6 @@ _cmc:
                             ; jl <
                             ; jle <=
                             ; jne !=
-
     ;if
     cmp EAX, EBX
     jge a
