@@ -5,7 +5,7 @@ section .text
 global _start
 
 _start:
-    lea ESI, [BUFFER] ;   estou mandando o endereço de memoria para o buff
+    lea ESI, [BUFFER]
     add ESI, 0x9
     mov byte[ESI], 0xA
 
@@ -43,7 +43,7 @@ _start:
 
     call saidaResultado
 
-    mov eax, 0x1
+    mov EAX, 0x1
     xor EBX, EBX
     int 0x80
 
