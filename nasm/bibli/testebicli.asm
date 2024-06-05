@@ -1,4 +1,4 @@
-%include '/home/henrique/vscode/assembly-2/nasm/bibli/biblioteca.inc'
+%include '/home/henrique/Vscod/assembly/nasm/bibli/biblioteca.inc'
 
 section .text
 
@@ -11,18 +11,15 @@ _start:
     mov byte[ESI], 0xA
 
     dec ESI
-    mov dl, 0x13                  ; -> 'C' 0x33 -> 'c'
-    add dl, '0'
+    mov dl, 0x41                  ; -> 'C' 0x33 -> 'c'
     mov [ESI], dl
 
     dec ESI
-    mov dl, 0x12                  ; -> 'B' 0x32 -> 'b'
-    add dl, '0'
+    mov dl, 0x42                  ; -> 'B' 0x32 -> 'b
     mov [ESI], dl
 
     dec ESI
-    mov dl, 0x11                  ; -> 'A' 0x31 -> 'a'
-    add dl, '0'
+    mov dl, 0x43                  ; -> 'A' 0x31 -> 'a
     mov [ESI], dl
 
     call saidaResultado

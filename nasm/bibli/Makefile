@@ -1,4 +1,4 @@
-NOME = testebicli
+NOME = popo
 
 all: $(NOME).o
 	ld -s -o $(NOME) $(NOME).o
