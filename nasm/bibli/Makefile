@@ -1,4 +1,4 @@
-NOME = popo
+NOME = popo2
 
 all: $(NOME).o
 	ld -s -o $(NOME) $(NOME).o
