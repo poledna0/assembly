@@ -1,4 +1,4 @@
-NOME = converte
+NOME = convertee
 
 all: $(NOME).o
 	ld -s -o $(NOME) $(NOME).o
