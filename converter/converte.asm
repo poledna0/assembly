@@ -46,8 +46,10 @@ spi:
     ;byte [ESI], EAX conterá 0x0000003F. Os bits superiores serão todos zeros,
     ;mantendo o valor original do byte no byte inferior de EAX.
     inc ESI
+    ; move o ponteiro para o px caract
     sub al, '0'
-    imul EBX, 0xA
+    
+    imul EBX, 0xA   
     add EBX, EAX ; ebx = ebx * 10 + eax
     loop .pxd
     mov EAX, EBX
