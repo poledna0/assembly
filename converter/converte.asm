@@ -37,6 +37,14 @@ spi:
     xor EBX, EBX
 .pxd:
     movzx EAX, byte [ESI]
+    ; no ESI esta guardado o endereco de memoria da frase '105'
+    ; o byte fala que vai ser lido B po B, um de cada vvez
+    ;movzx = 'move with zero extend'
+    ;preenche os bits adicionais com zeros.
+    ;-------------
+    ; Por exemplo, se o byte lido da memória for 0x3F, após a operação movzx EAX, 
+    ;byte [ESI], EAX conterá 0x0000003F. Os bits superiores serão todos zeros,
+    ;mantendo o valor original do byte no byte inferior de EAX.
     inc ESI
     sub al, '0'
     imul EBX, 0xA
