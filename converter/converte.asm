@@ -1,4 +1,4 @@
-%include '/home/henrique/Vscod/assembly/nasm/converter/biblioteca.inc'
+%include '/home/henriquep/VsCode/assembly-1/biblioteca.inc'
 
 section .data
     v1 dw '105', 0xA, 0xD

@@ -1,4 +1,4 @@
-%include '/home/henrique/Vscod/assembly/nasm/bibli/biblioteca.inc'
+%include '/home/henriquep/VsCode/assembly-1/biblioteca.inc'
 
 section .text
 
