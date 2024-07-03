@@ -1,4 +1,4 @@
-%include '/home/henriquep/VsCode/assembly-1/biblioteca.inc'
+%include '/home/henriquep/Vscode/assembly/biblioteca.inc'
 
 section .data
     v1 dw '105', 0xA, 0xD
