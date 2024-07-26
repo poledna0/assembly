@@ -1,0 +1,75 @@
+1 - senhor henrique(eu mesmo) sempre lembre que p uma entrada de msg por ex, ms1, vc precisa passar o tamanho dela
+    com o comando:   ->>>>>>> tam equ $- msg1
+
+2 - section .data tipo um apontamento
+
+3 - section .bss para variaveis ou contantes, n lembro 
+
+4 - section .text n lembro p q serve essa porra não
+
+5 - 0xA fim de linha ou ent o '\n'
+
+6 - 0XD é usado para retornar ao início da linha
+
+---------
+chat gpt 
+------------------------Seção .bss-------------------------------------
+
+-Propósito: A seção .bss (Block Started by Symbol) 
+é usada para declarar variáveis que são inicialmente não inicializadas. 
+Ou seja, você está reservando espaço na memória para variáveis que não têm um valor inicial específico. 
+O sistema operacional garante que o espaço reservado é limpo e inicializado para zero quando o programa é carregado.
+
+-Uso: Quando você deseja alocar espaço para variáveis que não precisam ser inicializadas com valores específicos na fase de montagem, 
+você as declara na seção .bss. 
+Isso ajuda a economizar espaço no arquivo executável, 
+pois o espaço reservado não é armazenado diretamente no arquivo de objeto. 
+Em vez disso, a inicialização para zero é feita em tempo dea execução.
+
+------------------------Seção .data:-------------------------------------
+
+-Propósito: Usada para declarar variáveis que são inicializadas com valores específicos.
+Essas variáveis têm valores predeterminados e são armazenadas diretamente no arquivo de objeto.
+
+------------------------Seção .text:-------------------------------------
+
+-Propósito: Contém o código executável do programa. Aqui é onde você coloca suas instruções Assembly.
+
+-------------------------------------------------------------------------
+
+.bss é utilizado para alocar espaço para variáveis que não são inicializadas no arquivo de objeto,mas são garantidas a serem inicializadas a zero em tempo de execução.
+.data é para variáveis que são inicializadas com valores específicos.
+.text é para o código executável do programa.
+
+-------------------------------------------------------------------------
+
+7 - para EAX : 
+    0x3 para leitura, entrada de informção 
+    0x4 para escrita, saida de informação
+
+8 - para EBX : 
+    0x0 entrada padrão
+    0x1 saida padrão
+
+9 - DB = Define Byte           -> aloca 1 byte
+    DW = Define Word           -> aloca 2 bytes
+    DD = Define Doubleword     -> aloca 4 bytes
+    DQ = Define Quadword       -> aloca  8 bytes
+    DT = Define Ten            -> aloca 10 bytes
+
+10 - je =
+     jg >
+     jge >=
+     jl <
+     jle <=
+     jne !=
+
+11 - MAKEFILE: 
+            NOME = popo2
+
+            all: $(NOME).o
+                ld -s -o $(NOME) $(NOME).o
+                rm -rf *.o;
+
+            %.o: %.asm
+                nasm -f elf64 $<

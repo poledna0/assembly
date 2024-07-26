@@ -1,7 +1,7 @@
-%include '/home/henriquep/Vscode/assembly/biblioteca.inc'
+%include '/home/henriquep/Vscode/assembly-1/biblioteca.inc'
 
 section .data
-    v1 dw '105', 0xA, 0xD
+    entrada dw '105', 0xA, 0xD
 
 section .text
 
@@ -16,14 +16,14 @@ _start:
     int 0x80
 
 converter_valor:
-    lea ESI, [v1]
+    lea ESI, [entrada]
     mov ECX, 0x3
-    call spi
+    call string_para_inteiro
     add EAX, 0x2
     ret
 
 mostrar_valor:
-    call ips
+    call inteiro_para_string
     call saidaResultado
     ret
 
@@ -33,9 +33,9 @@ mostrar_valor:
 ;---------------------; 
 ; Entrada: ESI (vl cnv) ECX (tam)
 ; Saida  :EAX
-spi:
+string_para_inteiro:
     xor EBX, EBX
-.pxd:
+.proximo_indice:
     movzx EAX, byte [ESI]
     ; no ESI esta guardado o endereco de memoria da frase '105'
     ; o byte fala que vai ser lido B po B, um de cada vvez
@@ -51,7 +51,7 @@ spi:
     
     imul EBX, 0xA   
     add EBX, EAX ; ebx = ebx * 10 + eax
-    loop .pxd
+    loop .proximo_indice
     mov EAX, EBX
     ret
 
@@ -60,17 +60,17 @@ spi:
 ;---------------------; 
 ; Entrada: EAX
 ; Saida  : BUFFER (vl ECX) TAM_BUFFER (EDX)
-ips:
+inteiro_para_string:
     lea ESI, [BUFFER]
     add ESI, 0x9
     mov byte[ESI], 0xA
     mov EBX, 0xA
-.pxd2:
+.proximo_indice2:
     xor EDX, EDX
     div EBX
     add DL, '0'
     dec ESI
     mov [ESI], DL
     test EAX, EAX
-    jnz .pxd2
+    jnz .proximo_indice2
     ret
