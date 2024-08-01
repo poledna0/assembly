@@ -73,3 +73,26 @@ Essas variáveis têm valores predeterminados e são armazenadas diretamente no 
 
             %.o: %.asm
                 nasm -f elf64 $<
+
+12 - movzx 
+    É usada para copiar dados de um registrador ou de uma posição de memória para outro registrador,
+    enquanto estende o valor de forma a preencher o restante do registrador de destino com zeros.
+    
+    Por ex se tem um valor de 8 bits (1 byte) e quer movê-lo para um registrador de 16 bits (2 bytes),
+    a instrução MOVZX vai preencher os bits mais significativos com zeros.
+    antes -> 1000
+    depois -> 00001000
+    assim dando menos probelmas e perca de dados..
+
+13 - sub al, '0'
+    isso serve para quando eu tenho por ex 0X31 que equivale ao numero 1 decimal, resumiundo ele vai fazer ele virar um decimal, fazendo o contrario
+    vc consegue transformar um decimal em hexadecimal,
+
+14 - lea 
+    carrega o endereço calculado de um operando em um registrador. Importante notar que LEA não acessa o conteúdo da memória, 
+    mas apenas calcula e armazena um endereço em um registrado
+
+    LEA destino, [endereco]
+
+    destino: O registrador onde o endereço calculado será armazenado.
+    endereco: Uma expressão que define um endereço de memória.

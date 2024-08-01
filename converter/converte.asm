@@ -1,4 +1,4 @@
-%include '/home/henriquep/Vscode/assembly-1/biblioteca.inc'
+%include '/home/henriquep/Vscode/assembly/biblioteca.inc'
 
 section .data
     entrada dw '105', 0xA, 0xD
@@ -51,7 +51,7 @@ string_para_inteiro:
     
     imul EBX, 0xA   
     add EBX, EAX ; ebx = ebx * 10 + eax
-    loop .proximo_indice
+    loop .proximo_indice ;while (-- ecx)
     mov EAX, EBX
     ret
 
