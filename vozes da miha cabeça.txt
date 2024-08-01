@@ -91,8 +91,6 @@ Essas variáveis têm valores predeterminados e são armazenadas diretamente no 
 14 - lea 
     carrega o endereço calculado de um operando em um registrador. Importante notar que LEA não acessa o conteúdo da memória, 
     mas apenas calcula e armazena um endereço em um registrado
-
     LEA destino, [endereco]
-
     destino: O registrador onde o endereço calculado será armazenado.
     endereco: Uma expressão que define um endereço de memória.
