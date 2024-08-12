@@ -91,6 +91,15 @@ Essas variáveis têm valores predeterminados e são armazenadas diretamente no 
 14 - lea 
     carrega o endereço calculado de um operando em um registrador. Importante notar que LEA não acessa o conteúdo da memória, 
     mas apenas calcula e armazena um endereço em um registrado
+
     LEA destino, [endereco]
+
     destino: O registrador onde o endereço calculado será armazenado.
     endereco: Uma expressão que define um endereço de memória.
+
+15 - só uma outra forma que aprendi hoje de como ele sabe que cmc o programa e quando a tarefa termina, quando a gente declara o global _start, é padrao para  
+    o SO saber que ali que vai comecar o programa, entao quando coloca _start:, o karnel vai cmc a rodar a partir daquele endereço de memoria, se no final do programa
+    não colocar o mov eax, 0x1 -> xor ebx, ebx -> int 0x80, ele vai continuar a executar os endereços seguintes de memoria, e vai dar erro, sim, o sistema vai rodar todo
+    mas o SO vai perceber que tem alguma coisa de errada pq oq tem nos endereços seguintes da memoria n faz o menor sentido e ele vai dar bug, resumiundo,
+    eu acredito, n tenho ctzz mas se isso acontecer em um bare metal vai dar merda, pq ele n vai se ligar q acabou e vai cmc a um passar por cima do outro e vai dar coco da pou
+
