@@ -5,7 +5,7 @@ _start:
     mov eax, 6
     mov edi, 0
 
-    test eax, 1 ; de vdd prof, esse comando eu catei no chat gpt
+    test eax, 1
     jz fim
 
     mov edi, 1
